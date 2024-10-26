@@ -1,0 +1,189 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #0f172a;
+    text-align: center;
+}
+
+section {
+    background: #fff;
+    margin: 10px auto;
+    padding: 20px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin: 10px 0;
+}
+
+button {
+    background-color: #1e293b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0f172a;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 5px;
+    background-color: #e2e8f0;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+    transform: scale(1.05);
+}
+
+.highlight {
+    background-color: yellow;
+    color: black;
+}
+
+.highlight1 {
+    color: blue;
+}
+
+.feedback-success {
+    color: green;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.code-container {
+margin-top: 5px;
+border: 1px solid #ccc;
+padding: 15px;
+border-radius: 5px;
+background-color: #e2e8f0;
+}
+
+.tab {
+display: flex;
+justify-content: flex-start;
+}
+
+.tab-button {
+background-color: #fff;
+color: #1e293b;
+border: 1px solid #ccc;
+padding: 10px;
+cursor: pointer;
+margin-right: 5px;
+}
+.tab-button:hover {
+background-color: #fff;
+color: #1e293b;
+border: 1px solid #ccc;
+padding: 10px;
+cursor: pointer;
+margin-right: 5px;
+}
+
+.tab-button.active {
+background-color: #1e293b;
+color: white;
+}
+
+.code {
+/* background-color: #282c34; */
+/* background-color: red;
+color: white; */
+/* padding: 1px; */
+border-radius: 5px;
+overflow: auto;
+white-space: pre-wrap;
+position: relative;
+/* background-color: #f9f9f9;  */
+border: 1px solid #ddd;
+
+}
+
+.html-code {
+color: #e06c75; /* HTML color */
+}
+
+.js-code {
+color: #61afef; /* JS color */
+
+}
+
+
+
+.copy-button {
+position: absolute; /* Position it absolutely */
+top: 10px; /* Adjust as necessary */
+right: 10px; /* Align to the right */
+background-color: #1e293b; /* Same as your main button color */
+color: #fff; /* White text for contrast */
+border: none; /* Remove default button border */
+padding: 5px 10px; /* Button padding */
+border-radius: 5px; /* Rounded corners */
+cursor: pointer; /* Change cursor on hover */
+transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.copy-button:hover {
+background-color: #0f172a; /* Darker color on hover */
+}
+.social-icons {
+    margin-top: 10px; /* Spacing above social icons */
+}
+
+.social-icons a {
+    color: #0f172a; /* Icon color */
+    margin: 0 10px; /* Spacing between icons */
+    font-size: 20px; /* Icon size */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-icons a:hover {
+    color: #5a82df; /* Change icon color on hover */
+}
+
+.footer{
+    justify-self: center;
+}
+
+h1 {
+    font-size: 2.5rem; /* Adjust the font size */
+    color: #0f172a; /* Set the text color */
+    text-align: center; /* Center align the text */
+    margin: 20px 0; /* Margin above and below */
+}
+
+h1 span {
+    font-size: 2rem; /* Adjust emoji size */
+    margin-right: 10px; /* Spacing between emoji and text */
+}
+
+h1 i {
+    font-size: 2rem; /* Adjust icon size */
+    margin-left: 10px; /* Spacing between text and icon */
+    color: #0f172a; /* JavaScript icon color */
+}
+
