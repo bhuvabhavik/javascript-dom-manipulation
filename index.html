@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Fun Examples</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<!-- Prism.js CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+<!-- Prism.js Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+
+
+</head>
+<body>
+
+    <!-- <h1>JavaScript DOM Fun Examples</h1> -->
+    <h1>
+        <span role="img" aria-label="JavaScript">🟡</span>
+        JavaScript DOM Fun Examples 
+        <i class="fab fa-js-square" aria-hidden="true"></i>
+    </h1>
+<!-- Example 1 -->
+<section id="example-1">
+    <h2>Example 1: Changing Text Content</h2>
+    <p>This example demonstrates how to change the content of a paragraph when a button is clicked. The initial text will be replaced with a new sentence upon clicking the button.</p>
+    
+    <p id="myParagraph">🚲 Why did the bicycle fall over?<br>Because it was two-tired! 😴 </p>
+    <button id="changeTextButton">Change Text</button>
+
+    <!-- Code Snippet -->
+    <div class="code-container">
+        <div class="tab">
+            <button class="tab-button active" onclick="showCode('html', 'example-1')">HTML</button>
+            <button class="tab-button" onclick="showCode('js', 'example-1')">JS</button>
+        </div>
+
+        <pre class="code htmlcode" id="htmlCode">
+            <button class="copy-button" onclick="copyCode('htmlCode')">Copy</button>
+            <code class="language-html">
+                &lt;p id="myParagraph"&gt;🚲 Why did the bicycle fall over? &lt;br&gt;Because it was two-tired! 😴&lt;/p&gt;
+                &lt;button id="changeTextButton"&gt;Change Text&lt;/button&gt;
+            </code>
+        </pre>
+
+        <pre class="code jscode" id="jsCode" style="display: none;">
+            <button class="copy-button" onclick="copyCode('jsCode')">Copy</button>
+                <code class="language-javascript">
+                    document.getElementById("changeTextButton")
+                    .addEventListener('click',function(){
+                     let paragraph = document.getElementById("myParagraph")
+                paragraph.innerHTML = `🌾 Why did the scarecrow win an award?<br>Because he was outstanding in his field! 🏆😊`; 
+                </code>
+        </pre>
+        
+    </div>
+</section>
+<hr>
+
+    <!-- example-2 -->
+    <section id="example-2">
+        <h2>Example 2: Highlighting the First List Item</h2>
+        <p>In this example, the first city in the list will be highlighted when the button is clicked. It shows how to traverse the DOM and apply a style to a specific element.</p>
+        
+        <ul id="citiesList">
+            <li>Berlin</li>
+            <li>Frankfurt</li>
+            <li>Hamburg</li>
+            <li>Munich</li>
+        </ul>
+    
+        <button id="highlightFirstCity">Highlight First City</button>
+    
+        <!-- Code Snippet -->
+        <div class="code-container" id="example2">
+
+
+            <!-- Tab buttons for switching between HTML and JS -->
+            <div class="tab">
+                <button class="tab-button active" onclick="showCode('html', 'example-2')">HTML</button>
+                <button class="tab-button" onclick="showCode('js', 'example-2')">JS</button>
+            </div>
+          
+            <pre class="code htmlcode" id="htmlCode2">
+                <!-- <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button> -->
+                <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button>
+                <code class="language-html">
+                    &lt;ul id="citiesList"&gt;
+                        &lt;li&gt;Berlin&lt;/li&gt;
+                        &lt;li&gt;Frankfurt&lt;/li&gt;
+                        &lt;li&gt;Hamburg&lt;/li&gt;
+                        &lt;li&gt;Munich&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;button id="highlightFirstCity"&gt;Highlight First City&lt;/button&gt;
+                </code>
+            </pre>
+
+            <pre class="code jscode" id="jsCode2" style="display: none;">
+                <button class="copy-button" onclick="copyCode('jsCode2')">Copy</button>
+                <code class="language-javascript">
+                    document.getElementById("highlightFirstCity").addEventListener("click", function () {
+                        let citiesList = document.getElementById("citiesList");
+                        citiesList.firstElementChild.classList.add("highlight");
+                        console.log(citiesList.firstElementChild.classList);
+                    })
+                </code>
+            </pre>
+        </div>
+    </section>
+    <hr>
+
+    <!-- Example 3 -->
+    <section id="example-3">
+        <h2>Example 3: Changing Text and Styles Dynamically</h2>
+        <p>This example demonstrates how to change both the text content and the style of a DOM element dynamically when a button is clicked.</p>
+        <div>Order: <span id="coffeeType">Latte</span></div>
+        <button id="changeOrder">Change Order to Espresso</button>
+
+        <!-- Code Snippet -->
+        <div class="code-container" id="example3">
+
+
+            <!-- Tab buttons for switching between HTML and JS -->
+            <div class="tab">
+                <button class="tab-button active" onclick="showCode('html', 'example-3')">HTML</button>
+                <button class="tab-button" onclick="showCode('js', 'example-3')">JS</button>
+            </div>
+          
+            <pre class="code htmlcode" id="htmlCode3">
+                <!-- <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button> -->
+                <button class="copy-button" onclick="copyCode('htmlCode3')">Copy</button>
+                <code class="language-html">
+                    &lt;h2&gt;Example 3: Changing Text and Styles Dynamically&lt;/h2&gt;
+                    &lt;p&gt;This example demonstrates how to change both the text content and the style of a DOM element dynamically when a button is clicked.&lt;/p&gt;
+                    &lt;div&gt;Order: &lt;span id=&quot;coffeeType&quot;&gt;Latte&lt;/span&gt;&lt;/div&gt;
+                    &lt;button id=&quot;changeOrder&quot;&gt;Change Order to Espresso&lt;/button&gt;
+                    
+                </code>
+            </pre>
+
+            <pre class="code jscode" id="jsCode3" style="display: none;">
+                <button class="copy-button" onclick="copyCode('jsCode3')">Copy</button>
+                <code class="language-javascript">
+                    document.getElementById("changeOrder").addEventListener("click",function(){
+                        // document.getElementById("coffeeType").innerText = "Espresso"
+                        document.getElementById("coffeeType").textContent = "Espressoo"
+                        document.getElementById("coffeeType").style.backgroundColor = "yellow"
+                        document.getElementById("coffeeType").style.color = "black"
+                        document.getElementById("coffeeType").style.padding = "6px 10px"
+                    })
+                </code>
+            </pre>
+        </div>
+
+
+
+
+    </section>
+
+    <hr>
+
+    <!-- Example 4 -->
+    <section id="example-4">
+        <h2>Example 4: Adding New Elements to a List</h2>
+        <p>When the button is clicked, a new item will be added to the list. This showcases how to create new elements and insert them into the DOM.</p>
+        <button id="addNewItem">Add a new item to the shopping list</button>
+        <ul id="shoppingList">
+            <li>Bread</li>
+            <li>Milk</li>
+        </ul>
+         <!-- Code Snippet -->
+         <div class="code-container" id="example4">
+
+
+            <!-- Tab buttons for switching between HTML and JS -->
+            <div class="tab">
+                <button class="tab-button active" onclick="showCode('html', 'example-4')">HTML</button>
+                <button class="tab-button" onclick="showCode('js', 'example-4')">JS</button>
+            </div>
+          
+            <pre class="code htmlcode" id="htmlCode4">
+                <!-- <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button> -->
+                <button class="copy-button" onclick="copyCode('htmlCode4')">Copy</button>
+                <code class="language-html">
+                    &lt;h2&gt;Example 4: Adding New Elements to a List&lt;/h2&gt;
+                    &lt;p&gt;When the button is clicked, a new item will be added to the list. This showcases how to create new elements and insert them into the DOM.&lt;/p&gt;
+                    &lt;button id=&quot;addNewItem&quot;&gt;Add a new item to the shopping list&lt;/button&gt;
+                    &lt;ul id=&quot;shoppingList&quot;&gt;
+                        &lt;li&gt;Bread&lt;/li&gt;
+                        &lt;li&gt;Milk&lt;/li&gt;
+                    &lt;/ul&gt;
+                </code>
+            </pre>
+
+            <pre class="code jscode" id="jsCode4" style="display: none;">
+                <button class="copy-button" onclick="copyCode('jsCode4')">Copy</button>
+                <code class="language-javascript">
+                    document.getElementById("addNewItem").addEventListener("click",function(){
+                        let newItem = document.createElement("li")
+                        newItem.textContent = "Butter";
+                        document.getElementById("shoppingList").appendChild(newItem)
+                    })
+                </code>
+            </pre>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Example 5 -->
+    <section id="example-5">
+        <h2>Example 5: Removing Elements from the DOM</h2>
+        <p>This example shows how to remove the last item in a list when a button is clicked.</p>
+        <ul id="taskList">
+            <li>Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li>
+        </ul>
+        <button id="removeLastTask">Remove Last Task</button>
+        <!-- Code Snippet -->
+        <div class="code-container" id="example-5">
+
+
+            <!-- Tab buttons for switching between HTML and JS -->
+            <div class="tab">
+                <button class="tab-button active" onclick="showCode('html', 'example-5')">HTML</button>
+                <button class="tab-button" onclick="showCode('js', 'example-5')">JS</button>
+            </div>
+          
+            <pre class="code htmlcode" id="htmlCode5">
+                <!-- <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button> -->
+                <button class="copy-button" onclick="copyCode('htmlCode5')">Copy</button>
+                <code class="language-html">
+                    &lt;h2&gt;Example 5: Removing Elements from the DOM&lt;/h2&gt;
+                    &lt;p&gt;This example shows how to remove the last item in a list when a button is clicked.&lt;/p&gt;
+                    &lt;ul id=&quot;taskList&quot;&gt;
+                        &lt;li&gt;Task 1&lt;/li&gt;
+                        &lt;li&gt;Task 2&lt;/li&gt;
+                        &lt;li&gt;Task 3&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;button id=&quot;removeLastTask&quot;&gt;Remove Last Task&lt;/button&gt;
+                    &lt;!-- Code Snippet --&gt;
+                    &lt;div class=&quot;code-container&quot; id=&quot;example4&quot;&gt;
+                </code>
+            </pre>
+
+            <pre class="code jscode" id="jsCode5" style="display: none;">
+                <button class="copy-button" onclick="copyCode('jsCode5')">Copy</button>
+                <code class="language-javascript">
+                    document.getElementById("removeLastTask").addEventListener("click",function(){
+                        let taskList = document.getElementById("taskList")
+                        if (taskList.lastElementChild !== null) {
+                            taskList.lastElementChild.remove()
+                        }
+                    })
+                </code>
+            </pre>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Example 6 -->
+    <section id="example-6">
+        <h2>Example 6: Event Handling with Double Click</h2>
+        <p>This example demonstrates how to trigger an event when an element is double-clicked.</p>
+        <button id="clickMeButton">Click Me!</button>
+
+      <!-- Code Snippet -->
+      <div class="code-container" id="example-6">
+
+
+        <!-- Tab buttons for switching between HTML and JS -->
+        <div class="tab">
+            <button class="tab-button active" onclick="showCode('html', 'example-6')">HTML</button>
+            <button class="tab-button" onclick="showCode('js', 'example-6')">JS</button>
+        </div>
+      
+        <pre class="code htmlcode" id="htmlCode6">
+            <!-- <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button> -->
+            <button class="copy-button" onclick="copyCode('htmlCode6')">Copy</button>
+            <code class="language-html">
+                &lt;h2&gt;Example 6: Event Handling with Double Click&lt;/h2&gt;
+                &lt;p&gt;This example demonstrates how to trigger an event when an element is double-clicked.&lt;/p&gt;
+                &lt;button id=&quot;clickMeButton&quot;&gt;Click Me!&lt;/button&gt;                
+            </code>
+        </pre>
+
+        <pre class="code jscode" id="jsCode6" style="display: none;">
+            <button class="copy-button" onclick="copyCode('jsCode6')">Copy</button>
+<code class="language-javascript">
+document.getElementById("clickMeButton").addEventListener("dblclick",function(){
+    alert("Bhavik Bhuva")
+})
+</code>
+        </pre>
+    </div>
+
+
+    </section>
+
+    <hr>
+
+    <!-- Example 7 -->
+    <section id="example-7">
+        <h2>Example 7: Event Delegation</h2>
+        <p>In this example, clicking any item in the list will trigger an alert displaying the name of the tea clicked. This is done using event delegation.</p>
+        <ul id="teaList">
+            <li class="teaItem">Green Tea</li>
+            <li class="teaItem">Oolong Tea</li>
+            <li class="teaItem">Black Tea</li>
+        </ul>
+        <p>Click on any tea to select it.</p>
+
+              <!-- Code Snippet -->
+      <div class="code-container" id="example-7">
+
+
+        <!-- Tab buttons for switching between HTML and JS -->
+        <div class="tab">
+            <button class="tab-button active" onclick="showCode('html', 'example-7')">HTML</button>
+            <button class="tab-button" onclick="showCode('js', 'example-7')">JS</button>
+        </div>
+      
+        <pre class="code htmlcode" id="htmlCode7">
+            <!-- <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button> -->
+            <button class="copy-button" onclick="copyCode('htmlCode7')">Copy</button>
+            <code class="language-html">
+                &lt;h2&gt;Example 7: Event Delegation&lt;/h2&gt;
+                &lt;p&gt;In this example, clicking any item in the list will trigger an alert displaying the name of the tea clicked. This is done using event delegation.&lt;/p&gt;
+                &lt;ul id=&quot;teaList&quot;&gt;
+                    &lt;li class=&quot;teaItem&quot;&gt;Green Tea&lt;/li&gt;
+                    &lt;li class=&quot;teaItem&quot;&gt;Oolong Tea&lt;/li&gt;
+                    &lt;li class=&quot;teaItem&quot;&gt;Black Tea&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;Click on any tea to select it.&lt;/p&gt;                           
+            </code>
+        </pre>
+
+        <pre class="code jscode" id="jsCode7" style="display: none;">
+            <button class="copy-button" onclick="copyCode('jsCode7')">Copy</button>
+<code class="language-javascript">
+    document.getElementById("teaList").addEventListener("click", function (event) {
+        if (event.target && event.target.matches(".teaItem")) {
+            alert("you selected " + event.target.textContent);
+        }
+    });
+</code>
+        </pre>
+    </div>
+    </section>
+
+    <hr>
+
+    <!-- Example 8 -->
+    <section id="example-8">
+        <h2>Example 8: Form Handling</h2>
+        <p>This example demonstrates how to capture form input and display it below the form after submission.</p>
+        <form id="feedbackform">
+            <label for="feedbackInput">Your Feedback:</label>
+            <input type="text" id="feedbackInput" placeholder="Enter feedback">
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <p id="feedbackDisplay"></p>
+              <!-- Code Snippet -->
+      <div class="code-container" id="example-8">
+
+
+        <!-- Tab buttons for switching between HTML and JS -->
+        <div class="tab">
+            <button class="tab-button active" onclick="showCode('html', 'example-8')">HTML</button>
+            <button class="tab-button" onclick="showCode('js', 'example-8')">JS</button>
+        </div>
+      
+        <pre class="code htmlcode" id="htmlCode6">
+            <!-- <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button> -->
+            <button class="copy-button" onclick="copyCode('htmlCode8')">Copy</button>
+            <code class="language-html">
+                &lt;h2&gt;Example 8: Form Handling&lt;/h2&gt;
+                &lt;p&gt;This example demonstrates how to capture form input and display it below the form after submission.&lt;/p&gt;
+                &lt;form id=&quot;feedbackform&quot;&gt;
+                    &lt;label for=&quot;feedbackInput&quot;&gt;Your Feedback:&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;feedbackInput&quot; placeholder=&quot;Enter feedback&quot;&gt;
+                    &lt;button type=&quot;submit&quot;&gt;Submit Feedback&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;p id=&quot;feedbackDisplay&quot;&gt;&lt;/p&gt;
+                             
+            </code>
+        </pre>
+
+        <pre class="code jscode" id="jsCode8" style="display: none;">
+            <button class="copy-button" onclick="copyCode('jsCode8')">Copy</button>
+<code class="language-javascript">
+    document.getElementById("feedbackform").addEventListener("submit", function(event){
+        event.preventDefault();
+        let feedback = document.getElementById("feedbackInput").value;
+        document.getElementById("feedbackDisplay").textContent = `feedback is : ${feedback}`;
+    })
+</code>
+        </pre>
+    </div>
+    </section>
+
+    <hr>
+
+    <!-- Example 9 -->
+    <section id="example-9">
+        <h2>Example 9: DOM Content Loaded Event</h2>
+        <p>This example listens for the DOM content to fully load before changing the text in the paragraph.</p>
+        <p id="domStatus">Waiting for DOM to load...</p>
+              <!-- Code Snippet -->
+      <div class="code-container" id="example-9">
+
+
+        <!-- Tab buttons for switching between HTML and JS -->
+        <div class="tab">
+            <button class="tab-button active" onclick="showCode('html', 'example-9')">HTML</button>
+            <button class="tab-button" onclick="showCode('js', 'example-9')">JS</button>
+        </div>
+      
+        <pre class="code htmlcode" id="htmlCode9">
+            <!-- <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button> -->
+            <button class="copy-button" onclick="copyCode('htmlCode9')">Copy</button>
+            <code class="language-html">
+                &lt;h2&gt;Example 9: DOM Content Loaded Event&lt;/h2&gt;
+&lt;p&gt;This example listens for the DOM content to fully load before changing the text in the paragraph.&lt;/p&gt;
+&lt;p id=&quot;domStatus&quot;&gt;Waiting for DOM to load...&lt;/p&gt;              
+            </code>
+        </pre>
+
+        <pre class="code jscode" id="jsCode9" style="display: none;">
+            <button class="copy-button" onclick="copyCode('jsCode9')">Copy</button>
+<code class="language-javascript">
+    document.addEventListener("DOMContentLoaded", function (){
+        document.getElementById("domStatus").textContent = "Document Loaded Successfully."
+    })
+</code>
+        </pre>
+    </div>
+    </section>
+
+    <hr>
+
+    <!-- Example 10 -->
+    <section id="example-10">
+        <h2>Example 10: CSS Class Manipulation</h2>
+        <p>This example toggles a CSS class on a paragraph to change its color when the button is clicked.</p>
+        <p id="descriptionText">This text will change color.</p>
+        <button id="toggleHighlight">Toggle Highlight</button>
+              <!-- Code Snippet -->
+      <div class="code-container" id="example-10">
+
+
+        <!-- Tab buttons for switching between HTML and JS -->
+        <div class="tab">
+            <button class="tab-button active" onclick="showCode('html', 'example-10')">HTML</button>
+            <button class="tab-button" onclick="showCode('js', 'example-10')">JS</button>
+        </div>
+      
+        <pre class="code htmlcode" id="htmlCode10">
+            <!-- <button class="copy-button" onclick="copyCode('htmlCode2')">Copy</button> -->
+            <button class="copy-button" onclick="copyCode('htmlCode10')">Copy</button>
+            <code class="language-html">
+                &lt;h2&gt;Example 10: CSS Class Manipulation&lt;/h2&gt;
+                &lt;p&gt;This example toggles a CSS class on a paragraph to change its color when the button is clicked.&lt;/p&gt;
+                &lt;p id=&quot;descriptionText&quot;&gt;This text will change color.&lt;/p&gt;
+                &lt;button id=&quot;toggleHighlight&quot;&gt;Toggle Highlight&lt;/button&gt;
+            </code>
+        </pre>
+
+        <pre class="code jscode" id="jsCode10" style="display: none;">
+            <button class="copy-button" onclick="copyCode('jsCode10')">Copy</button>
+<code class="language-javascript">
+    document.getElementById("toggleHighlight").addEventListener("click",function(){
+        let descriptionText = document.getElementById("descriptionText")
+        descriptionText.classList.toggle("highlight1")
+    })
+</code>
+        </pre>
+    </div>
+    </section>
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>Designed with ❤️ by <a href="https://bhavikbhuva.com" target="_blank">Bhavik Bhuva</a></p>
+        <div class="social-icons">
+            <a href="https://github.com/bhuvabhavik" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/bhavikbhuva" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="./script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+</html>
